@@ -1,3 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
-@use "bootstrap/scss/bootstrap";
-@use "bootstrap-icons";
+$color-bg-primary: #7139a8;
+$color-bg-secondary: #a66be0;
+$color-bg-light: #f5f0fa;
+$color-bg-dark: #40205f;
+$color-text-primary: #40205f;
+$fonte-padrao:
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  sans-serif;
+
+@use 'bootstrap/scss/bootstrap' with (
+  $primary: $color-bg-primary,
+  $secondary: $color-bg-secondary,
+  $light: $color-bg-light,
+  $dark: $color-bg-dark,
+  $body-bg: $color-bg-light,
+  $body-color: $color-text-primary,
+  $font-family-base: $fonte-padrao,
+  $font-family-sans-serif: $fonte-padrao
+);
+@use 'bootstrap-icons';
