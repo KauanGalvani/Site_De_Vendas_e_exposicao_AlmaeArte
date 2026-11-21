@@ -21,3 +21,7 @@ $fonte-padrao:
   $font-family-sans-serif: $fonte-padrao
 );
 @use 'bootstrap-icons';
+
+.gradient-color {
+  background: linear-gradient(90deg, #7139a8 38%, #40205f 94%);
+}

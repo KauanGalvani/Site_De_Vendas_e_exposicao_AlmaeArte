@@ -1,8 +1,16 @@
-<nav class="navbar navbar-expand-lg sticky-top bg-primary" data-bs-theme="dark">
-  <div class="container-fluid">
-    <p class="navbar-brand py-0 mt-2" href="#">Alma & Arte</p>
-    <ul class="navbar-nav"></ul>
-
-    <a href="#" class="nav-link"><i>icone</i> Carrinho</a>
+<nav class="navbar navbar-expand-lg sticky-top gradient-color" data-bs-theme="dark">
+  <div class="container-fluid" id="navbar">
+    <p class="navbar-brand py-0 mt-2 fs-5" href="#">Alma & Arte</p>
+    <ul class="navbar-nav gap-5">
+      @for (item of itens; track $index) {
+        <li class="nav-item">
+          <a class="nav-link fs-5" [href]="item.url">
+            <i class="{{ item.icone }}"></i>
+            {{ item.titulo }}
+          </a>
+        </li>
+      }
+    </ul>
+    <a href="#" class="nav-link navbar-nav fs-5 gap-2"> <i class="bi bi-cart3"></i> Carrinho</a>
   </div>
 </nav>
