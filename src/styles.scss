@@ -28,15 +28,35 @@ $fonte-padrao:
 
 .brand-script {
   font-family: 'Dancing Script', cursive;
-  font-size: 1.7rem !important;
+  font-size: 2rem !important;
   font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  text-shadow: 12px 4px 3.5px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-animation {
-  transition: background-color 500ms ease, border-radius 500ms ease;
+  transition:
+    background-color 500ms ease,
+    border-radius 500ms ease;
+
+  color: #f5f0fa;
 }
 
 .navbar-animation:hover {
   background-color: #40205f;
   border-radius: 100px;
+}
+
+.navbar-animation-carrinho {
+  transition:
+    background-color 500ms ease,
+    border-radius 500ms ease;
+
+  color: #f5f0fa;
+}
+
+.navbar-animation-carrinho:hover {
+  background-color: #7139a8;
+  border-radius: 20px;
 }
