@@ -26,6 +26,12 @@ $fonte-padrao:
   background: linear-gradient(90deg, #7139a8 38%, #40205f 94%);
 }
 
+.brand-script {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.7rem !important;
+  font-weight: 600;
+}
+
 .navbar-animation {
   transition: background-color 500ms ease, border-radius 500ms ease;
 }
