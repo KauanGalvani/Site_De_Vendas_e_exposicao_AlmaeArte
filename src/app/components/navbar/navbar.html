@@ -4,7 +4,7 @@
     <ul class="navbar-nav gap-5">
       @for (item of itens; track $index) {
         <li class="nav-item">
-          <a class="nav-link fs-5" [href]="item.url">
+          <a class="nav-link fs-5 navbar-animation" [href]="item.url">
             <i class="{{ item.icone }}"></i>
             {{ item.titulo }}
           </a>
