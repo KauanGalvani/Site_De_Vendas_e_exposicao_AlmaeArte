@@ -60,3 +60,15 @@ $fonte-padrao:
   background-color: #7139a8;
   border-radius: 20px;
 }
+
+section {
+  display: flex;
+
+  min-height: 100vh;
+}
+
+.imagem-7 {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
