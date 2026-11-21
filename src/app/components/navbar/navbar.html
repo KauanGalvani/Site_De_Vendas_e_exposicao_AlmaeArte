@@ -1,18 +1,35 @@
 <nav class="navbar navbar-expand-lg sticky-top gradient-color" data-bs-theme="dark">
-  <div class="container-fluid" id="navbar">
+  <div class="container">
     <p class="navbar-brand brand-script m-0">Alma & Arte</p>
-    <ul class="navbar-nav gap-5">
-      @for (item of itens; track $index) {
-        <li class="nav-item">
-          <a class="nav-link fs-5 navbar-animation" [href]="item.url">
-            <i class="{{ item.icone }}"></i>
-            {{ item.titulo }}
-          </a>
-        </li>
-      }
-    </ul>
-    <a href="#" class="nav-link navbar-nav fs-5 gap-2 navbar-animation-carrinho">
-      <i class="bi bi-cart3"></i> Carrinho</a
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
     >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar">
+      <span class="ms-auto"></span>
+
+      <ul class="navbar-nav gap-5">
+        @for (item of itens; track $index) {
+          <li class="nav-item">
+            <a class="nav-link fs-5 navbar-animation" [href]="item.url">
+              <i class="{{ item.icone }}"></i>
+              {{ item.titulo }}
+            </a>
+          </li>
+        }
+      </ul>
+      <a href="#" class="nav-link navbar-nav fs-5 gap-2 ms-auto navbar-animation-carrinho">
+        <i class="bi bi-cart3"></i> Carrinho</a
+      >
+    </div>
   </div>
 </nav>
