@@ -18,6 +18,7 @@
             />
             <h3>{{ obra.titulo }}</h3>
             <p>Uma criação original da artista.</p>
+            <p class="obra-preco">{{ obra.categoria }} · {{ obra.preco | currency: 'BRL' }}</p>
             <button class="btn btn-outline-primary btn-sm mt-2" type="button" [disabled]="estaNoCarrinho(obra)" (click)="adicionarAoCarrinho.emit(obra)">
               @if (estaNoCarrinho(obra)) {
                 <i class="bi bi-check2 me-1" aria-hidden="true"></i> No carrinho

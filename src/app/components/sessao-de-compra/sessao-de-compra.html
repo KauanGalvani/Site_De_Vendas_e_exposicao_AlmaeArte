@@ -10,7 +10,13 @@
 
     <div class="compra-painel row g-0 mx-auto mt-5">
       <div class="col-lg-7 compra-escolha">
-        <div class="compra-passo"><span>01</span><div><h3>Seu carrinho</h3><p>Revise as obras que você adicionou.</p></div></div>
+        <div class="compra-passo">
+          <span>01</span>
+          <div>
+            <h3>Seu carrinho</h3>
+            <p>Revise as obras que você adicionou.</p>
+          </div>
+        </div>
 
         @if (obras.length > 0) {
           <div class="lista-carrinho">
@@ -18,10 +24,16 @@
               <article class="obra-selecionada">
                 <img [src]="obra.imagem" [alt]="obra.titulo + ' selecionada'" />
                 <div>
-                  <span class="obra-selo"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> No carrinho</span>
+                  <span class="obra-selo"
+                    ><i class="bi bi-check-circle-fill" aria-hidden="true"></i> No carrinho</span
+                  >
                   <h4>{{ obra.titulo }}</h4>
-                  <p>Criação original da coleção Alma &amp; Arte.</p>
-                  <button class="trocar-obra" type="button" (click)="removerObra.emit(obra)">Remover do carrinho <i class="bi bi-trash3" aria-hidden="true"></i></button>
+                  <p>{{ obra.categoria }}</p>
+                  <strong class="preco-item">{{ formatarMoeda(obra.preco) }}</strong>
+                  <br />
+                  <button class="trocar-obra" type="button" (click)="removerObra.emit(obra)">
+                    Remover do carrinho <i class="bi bi-trash3" aria-hidden="true"></i>
+                  </button>
                 </div>
               </article>
             }
@@ -31,32 +43,64 @@
             <span class="compra-vazia-icone"><i class="bi bi-image" aria-hidden="true"></i></span>
             <h4>Sua escolha aparece aqui</h4>
             <p>Explore a galeria e toque em “Adicionar ao carrinho” para começar.</p>
-            <a class="btn btn-outline-primary" href="#galeria">Ver galeria <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i></a>
+            <a class="btn btn-outline-primary" href="#galeria"
+              >Ver galeria <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i
+            ></a>
           </div>
         }
       </div>
 
       <aside class="col-lg-5 compra-resumo" aria-labelledby="resumo-compra-titulo">
-        <div class="compra-passo"><span>02</span><div><h3 id="resumo-compra-titulo">Resumo</h3><p>Confira os detalhes antes de continuar.</p></div></div>
-        <div class="resumo-linha"><span>Obras</span><strong>{{ obras.length }} {{ obras.length === 1 ? 'item' : 'itens' }}</strong></div>
-        <div class="resumo-linha"><span>Valor</span><strong class="valor-consulta">A consultar</strong></div>
-        <div class="resumo-total"><span>Total demonstrativo</span><strong>A consultar</strong></div>
+        <div class="compra-passo">
+          <span>02</span>
+          <div>
+            <h3 id="resumo-compra-titulo">Resumo</h3>
+            <p>Confira os detalhes antes de continuar.</p>
+          </div>
+        </div>
+        <div class="resumo-linha">
+          <span>Obras</span
+          ><strong>{{ obras.length }} {{ obras.length === 1 ? 'item' : 'itens' }}</strong>
+        </div>
+        <div class="resumo-total">
+          <span>Total demonstrativo</span><strong>{{ formatarMoeda(total) }}</strong>
+        </div>
 
         <div class="aviso-simulacao">
           <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
-          <p><strong>Compra demonstrativa</strong><br />Nenhum pagamento será realizado. O valor e a disponibilidade precisam ser confirmados com a artista.</p>
+          <p>
+            <strong>Compra demonstrativa</strong><br />Nenhum pagamento será realizado. A
+            disponibilidade precisa ser confirmada com a artista.
+          </p>
         </div>
 
-        <button class="btn btn-primary btn-lg w-100" type="button" [disabled]="obras.length === 0" (click)="mostrarAviso = true">
-          Continuar com {{ obras.length }} {{ obras.length === 1 ? 'obra' : 'obras' }} <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+        <button
+          class="btn btn-primary btn-lg w-100"
+          type="button"
+          [disabled]="obras.length === 0"
+          (click)="mostrarAviso = true"
+        >
+          Continuar com {{ obras.length }} {{ obras.length === 1 ? 'obra' : 'obras' }}
+          <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
         </button>
         @if (mostrarAviso) {
-          <p class="retorno-compra" role="status">A confirmação pela API será disponibilizada em breve. Entre em contato com a artista para consultar as obras.</p>
+          <p class="retorno-compra" role="status">
+            A confirmação pela API será disponibilizada em breve. Entre em contato com a artista
+            para consultar as obras.
+          </p>
         }
-        <p class="compra-contato mb-0">Ficou com alguma dúvida? <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Fale com a artista</a>.</p>
+        <p class="compra-contato mb-0">
+          Ficou com alguma dúvida?
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+            >Fale com a artista</a
+          >.
+        </p>
       </aside>
     </div>
 
-    <p class="compra-rodape text-center mb-0"><i class="bi bi-heart-fill me-2" aria-hidden="true"></i>Cada obra carrega um pouco da história de quem a criou.</p>
+    <p class="compra-rodape text-center mb-0">
+      <i class="bi bi-heart-fill me-2" aria-hidden="true"></i>Cada obra carrega um pouco da história
+      de quem a criou.
+    </p>
   </div>
 </section>
