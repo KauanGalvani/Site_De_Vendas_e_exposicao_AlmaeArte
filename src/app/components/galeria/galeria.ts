@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ObraSelecionada } from '../sessao-de-compra/sessao-de-compra';
 
 @Component({
@@ -7,7 +7,12 @@ import { ObraSelecionada } from '../sessao-de-compra/sessao-de-compra';
   templateUrl: './galeria.html',
 })
 export class Galeria {
-  @Output() obraEscolhida = new EventEmitter<ObraSelecionada>();
+  @Input() obrasNoCarrinho: ObraSelecionada[] = [];
+  @Output() adicionarAoCarrinho = new EventEmitter<ObraSelecionada>();
+
+  estaNoCarrinho(obra: ObraSelecionada): boolean {
+    return this.obrasNoCarrinho.some((item) => item.imagem === obra.imagem);
+  }
 
   public readonly obrasGaleria = [
     { titulo: 'Obra 01', imagem: '/img/pintura-1-fundo-preenchido.jpeg' },

@@ -18,8 +18,12 @@
             />
             <h3>{{ obra.titulo }}</h3>
             <p>Uma criação original da artista.</p>
-            <button class="btn btn-outline-primary btn-sm mt-2" type="button" (click)="obraEscolhida.emit(obra)">
-              Quero esta obra <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+            <button class="btn btn-outline-primary btn-sm mt-2" type="button" [disabled]="estaNoCarrinho(obra)" (click)="adicionarAoCarrinho.emit(obra)">
+              @if (estaNoCarrinho(obra)) {
+                <i class="bi bi-check2 me-1" aria-hidden="true"></i> No carrinho
+              } @else {
+                <i class="bi bi-cart-plus me-1" aria-hidden="true"></i> Adicionar ao carrinho
+              }
             </button>
           </article>
         </div>

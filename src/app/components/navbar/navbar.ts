@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 interface ItemNavbar {
   titulo: string;
@@ -12,6 +12,7 @@ interface ItemNavbar {
   templateUrl: './navbar.html',
 })
 export class Navbar {
+  @Input() quantidadeNoCarrinho = 0;
   public readonly itens: ItemNavbar[] = [
     { titulo: 'Inicio', url: '#inicio', icone: 'bi bi-house' },
     { titulo: 'Sobre', url: '#sobre', icone: 'bi bi-person-vcard' },

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 export interface ObraSelecionada {
   titulo: string;
@@ -10,6 +10,7 @@ export interface ObraSelecionada {
   templateUrl: './sessao-de-compra.html',
 })
 export class SessaoDeCompra {
-  @Input() obra: ObraSelecionada | null = null;
+  @Input() obras: ObraSelecionada[] = [];
+  @Output() removerObra = new EventEmitter<ObraSelecionada>();
   mostrarAviso = false;
 }
