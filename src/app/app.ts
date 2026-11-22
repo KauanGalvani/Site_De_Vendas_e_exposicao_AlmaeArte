@@ -2,9 +2,10 @@ import { Component, signal } from '@angular/core';
 import { Navbar } from './components/navbar/navbar';
 import { Inicio } from './components/inicio/inicio';
 import { Sobre } from './components/sobre/sobre';
+import { Galeria } from './components/galeria/galeria';
 
 @Component({
-  imports: [Navbar, Inicio, Sobre],
+  imports: [Navbar, Inicio, Sobre, Galeria],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',

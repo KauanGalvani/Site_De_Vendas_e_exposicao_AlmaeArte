@@ -1,0 +1,26 @@
+<section id="galeria" class="conteudo-secao galeria-obras">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-4">
+      <div>
+        <p class="secao-sobretitulo mb-2">Feitas para tocar a alma</p>
+        <h2 class="display-5 fw-bold mb-0">Galeria de obras</h2>
+      </div>
+      <p class="mb-0">Explore as criações da Alma &amp; Arte.</p>
+    </div>
+    <div class="row g-4">
+      @for (obra of obrasGaleria; track obra.imagem) {
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="obra-card">
+            <img
+              [src]="obra.imagem"
+              [alt]="obra.titulo + ' da coleção Alma & Arte'"
+              loading="lazy"
+            />
+            <h3>{{ obra.titulo }}</h3>
+            <p>Uma criação original da artista.</p>
+          </article>
+        </div>
+      }
+    </div>
+  </div>
+</section>
