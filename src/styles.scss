@@ -330,6 +330,76 @@ section {
   color: rgba($color-text-primary, 0.78);
 }
 
+.sessao-compra {
+  background:
+    radial-gradient(ellipse at 8% 12%, rgba($color-bg-secondary, 0.12), transparent 34%),
+    linear-gradient(145deg, #f7f2fa, #fff 56%, #f2eaf7);
+}
+
+.compra-cabecalho { max-width: 720px; }
+.sessao-compra .secao-sobretitulo { color: $color-bg-primary; }
+.compra-cabecalho > p:last-child { color: rgba($color-text-primary, 0.76); }
+
+.compra-painel {
+  max-width: 1040px;
+  overflow: hidden;
+  border: 1px solid rgba($color-bg-dark, 0.1);
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgba($color-bg-dark, 0.1);
+}
+
+.compra-escolha, .compra-resumo { padding: clamp(1.5rem, 4vw, 3rem); }
+.compra-escolha { background: rgba(#f5f0fa, 0.56); }
+.compra-resumo { border-left: 1px solid rgba($color-bg-dark, 0.09); }
+
+.compra-passo { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 2rem; }
+.compra-passo > span {
+  display: grid; flex: 0 0 42px; width: 42px; height: 42px; place-items: center;
+  border: 1px solid rgba($color-bg-primary, 0.2); border-radius: 50%; color: $color-bg-primary;
+  font-size: 0.8rem; font-weight: 700;
+}
+.compra-passo h3 { margin: 0 0 0.3rem; color: $color-bg-dark; font-size: 1.25rem; }
+.compra-passo p { margin: 0; color: rgba($color-text-primary, 0.68); font-size: 0.92rem; }
+
+.compra-vazia {
+  display: flex; min-height: 300px; flex-direction: column; align-items: center; justify-content: center;
+  padding: 2rem; border: 1px dashed rgba($color-bg-primary, 0.3); border-radius: 16px; text-align: center;
+}
+.compra-vazia-icone { display: grid; width: 58px; height: 58px; place-items: center; margin-bottom: 1rem; border-radius: 50%; background: #eee3f8; color: $color-bg-primary; font-size: 1.4rem; }
+.compra-vazia h4, .obra-selecionada h4 { color: $color-bg-dark; font-size: 1.15rem; font-weight: 700; }
+.compra-vazia p, .obra-selecionada p { max-width: 300px; color: rgba($color-text-primary, 0.7); font-size: 0.92rem; }
+
+.obra-selecionada { display: grid; grid-template-columns: minmax(130px, 0.8fr) 1fr; gap: 1.25rem; align-items: center; padding: 1rem; border: 1px solid rgba($color-bg-primary, 0.13); border-radius: 16px; background: #fff; }
+.obra-selecionada img { width: 100%; height: 190px; border-radius: 10px; object-fit: cover; }
+.obra-selo { display: inline-block; margin-bottom: 0.8rem; color: #39724b; font-size: 0.75rem; font-weight: 700; }
+.obra-selo i { margin-right: 0.25rem; }
+.trocar-obra { color: $color-bg-primary; font-size: 0.88rem; font-weight: 700; text-decoration: none; }
+.trocar-obra:hover { text-decoration: underline; }
+
+.resumo-linha, .resumo-total { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid rgba($color-bg-dark, 0.1); font-size: 0.92rem; }
+.resumo-linha span, .resumo-total span { color: rgba($color-text-primary, 0.68); }
+.resumo-linha strong { text-align: right; }
+.valor-consulta { color: $color-bg-primary; }
+.resumo-total { margin-bottom: 1.4rem; border-bottom: 0; color: $color-bg-dark; font-size: 1rem; font-weight: 700; }
+.aviso-simulacao { display: flex; gap: 0.75rem; margin-bottom: 1.25rem; padding: 1rem; border: 1px solid #eadcf5; border-radius: 12px; background: #f8f3fb; color: $color-bg-primary; }
+.aviso-simulacao > i { margin-top: 0.15rem; }
+.aviso-simulacao p { margin: 0; color: rgba($color-text-primary, 0.78); font-size: 0.82rem; line-height: 1.55; }
+.compra-resumo .btn:disabled { opacity: 0.56; }
+.retorno-compra { margin: 1rem 0 0; padding: 0.85rem; border-radius: 10px; background: #f1f7f1; color: #315e3d; font-size: 0.87rem; }
+.compra-contato { margin-top: 1.25rem; color: rgba($color-text-primary, 0.7); font-size: 0.82rem; text-align: center; }
+.compra-contato a { color: $color-bg-primary; font-weight: 700; }
+.compra-rodape { margin-top: 2rem; color: rgba($color-text-primary, 0.68); font-family: Georgia, 'Times New Roman', serif; font-style: italic; }
+.compra-rodape i { color: #a66be0; font-size: 0.75rem; }
+
+@media (max-width: 991.98px) {
+  .compra-resumo { border-top: 1px solid rgba($color-bg-dark, 0.09); border-left: 0; }
+}
+@media (max-width: 575.98px) {
+  .obra-selecionada { grid-template-columns: 1fr; }
+  .obra-selecionada img { height: 240px; }
+}
+
 @keyframes galeria-respirando {
   from { background-position: 0% 15%; }
   to { background-position: 100% 85%; }

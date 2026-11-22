@@ -4,4 +4,6 @@
 
 <app-sobre></app-sobre>
 
-<app-galeria></app-galeria>
+<app-galeria (obraEscolhida)="obraSelecionada = $event"></app-galeria>
+
+<app-sessao-de-compra [obra]="obraSelecionada"></app-sessao-de-compra>

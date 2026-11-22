@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ObraSelecionada } from '../sessao-de-compra/sessao-de-compra';
 
 @Component({
   imports: [],
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './galeria.html',
 })
 export class Galeria {
+  @Output() obraEscolhida = new EventEmitter<ObraSelecionada>();
+
   public readonly obrasGaleria = [
     { titulo: 'Obra 01', imagem: '/img/pintura-1-fundo-preenchido.jpeg' },
     { titulo: 'Obra 02', imagem: '/img/imagem-2-fundo-preenchido.jpeg' },

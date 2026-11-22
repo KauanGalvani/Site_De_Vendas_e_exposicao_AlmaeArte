@@ -1,0 +1,58 @@
+<section id="compra" class="conteudo-secao sessao-compra">
+  <div class="container">
+    <div class="compra-cabecalho text-center mx-auto">
+      <p class="secao-sobretitulo mb-2">Um pedacinho de arte, feito com carinho</p>
+      <h2 class="display-5 fw-bold mb-3">Sua próxima obra começa aqui</h2>
+      <p class="lead mb-0">
+        Escolha uma criação da galeria e veja o resumo da sua compra demonstrativa.
+      </p>
+    </div>
+
+    <div class="compra-painel row g-0 mx-auto mt-5">
+      <div class="col-lg-7 compra-escolha">
+        <div class="compra-passo"><span>01</span><div><h3>Escolha sua obra</h3><p>Você pode selecionar uma obra diretamente na galeria.</p></div></div>
+
+        @if (obra) {
+          <div class="obra-selecionada">
+            <img [src]="obra.imagem" [alt]="obra.titulo + ' selecionada'" />
+            <div>
+              <span class="obra-selo"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Obra selecionada</span>
+              <h4>{{ obra.titulo }}</h4>
+              <p>Criação original da coleção Alma &amp; Arte.</p>
+              <a class="trocar-obra" href="#galeria">Escolher outra obra <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        } @else {
+          <div class="compra-vazia">
+            <span class="compra-vazia-icone"><i class="bi bi-image" aria-hidden="true"></i></span>
+            <h4>Sua escolha aparece aqui</h4>
+            <p>Explore a galeria e toque em “Quero esta obra” para começar.</p>
+            <a class="btn btn-outline-primary" href="#galeria">Ver galeria <i class="bi bi-arrow-up-right ms-1" aria-hidden="true"></i></a>
+          </div>
+        }
+      </div>
+
+      <aside class="col-lg-5 compra-resumo" aria-labelledby="resumo-compra-titulo">
+        <div class="compra-passo"><span>02</span><div><h3 id="resumo-compra-titulo">Resumo</h3><p>Confira os detalhes antes de continuar.</p></div></div>
+        <div class="resumo-linha"><span>Obra</span><strong>{{ obra?.titulo ?? 'Nenhuma selecionada' }}</strong></div>
+        <div class="resumo-linha"><span>Valor</span><strong class="valor-consulta">A consultar</strong></div>
+        <div class="resumo-total"><span>Total demonstrativo</span><strong>A consultar</strong></div>
+
+        <div class="aviso-simulacao">
+          <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
+          <p><strong>Compra demonstrativa</strong><br />Nenhum pagamento será realizado. O valor e a disponibilidade precisam ser confirmados com a artista.</p>
+        </div>
+
+        <button class="btn btn-primary btn-lg w-100" type="button" [disabled]="!obra" (click)="mostrarAviso = true">
+          Continuar com esta obra <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+        </button>
+        @if (mostrarAviso) {
+          <p class="retorno-compra" role="status">A confirmação pela API será disponibilizada em breve. Entre em contato com a artista para consultar esta obra.</p>
+        }
+        <p class="compra-contato mb-0">Ficou com alguma dúvida? <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Fale com a artista</a>.</p>
+      </aside>
+    </div>
+
+    <p class="compra-rodape text-center mb-0"><i class="bi bi-heart-fill me-2" aria-hidden="true"></i>Cada obra carrega um pouco da história de quem a criou.</p>
+  </div>
+</section>

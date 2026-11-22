@@ -18,6 +18,9 @@
             />
             <h3>{{ obra.titulo }}</h3>
             <p>Uma criação original da artista.</p>
+            <button class="btn btn-outline-primary btn-sm mt-2" type="button" (click)="obraEscolhida.emit(obra)">
+              Quero esta obra <i class="bi bi-arrow-right ms-1" aria-hidden="true"></i>
+            </button>
           </article>
         </div>
       }
@@ -28,7 +31,7 @@
       <p class="mb-4">
         Em breve, você poderá escolher uma obra pronta entrega ou encomendar uma criação exclusiva.
       </p>
-      <a class="btn btn-primary btn-lg" href="/encomendar">
+      <a class="btn btn-primary btn-lg" href="#compra">
         <i class="bi bi-brush me-2" aria-hidden="true"></i>
         Comprar ou encomendar uma obra
       </a>
