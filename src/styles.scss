@@ -434,6 +434,47 @@ section {
 .sobre-link span { transition: transform 180ms ease; }
 .sobre-link:hover span { transform: translateY(4px); }
 
+.sobre-redes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+.sobre-rede {
+  display: inline-flex;
+  gap: 0.55rem;
+  align-items: center;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgba($color-bg-primary, 0.2);
+  border-radius: 999px;
+  background: rgba(#fff, 0.55);
+  color: $color-bg-dark;
+  font-size: 0.92rem;
+  text-decoration: none;
+  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.sobre-rede i {
+  color: $color-bg-primary;
+  font-size: 1.05rem;
+}
+
+.sobre-rede:hover,
+.sobre-rede:focus-visible {
+  border-color: $color-bg-primary;
+  background: $color-bg-primary;
+  color: #fff;
+}
+
+.sobre-rede:hover i,
+.sobre-rede:focus-visible i { color: #fff; }
+
+.sobre-rede:focus-visible {
+  outline: 2px solid $color-bg-secondary;
+  outline-offset: 3px;
+}
+
 .foto-artista-placeholder,
 .obra-primavera-placeholder {
   position: relative;
