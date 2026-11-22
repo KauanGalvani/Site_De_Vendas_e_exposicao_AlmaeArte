@@ -37,29 +37,69 @@ $fonte-padrao:
 }
 
 .navbar-animation {
-  transition:
-    background-color 500ms ease,
-    border-radius 500ms ease;
-
+  position: relative;
   color: #f5f0fa;
+  transition: color 220ms ease;
 }
 
-.navbar-animation:hover {
-  background-color: #40205f;
-  border-radius: 100px;
+.navbar-animation::after {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.2rem;
+  left: 0.5rem;
+  height: 2px;
+  border-radius: 2px;
+  background: #d6b7ed;
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+.navbar-animation:hover,
+.navbar-animation:focus-visible {
+  color: #fff;
+}
+
+.navbar-animation:hover::after,
+.navbar-animation:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.navbar-animation:focus-visible,
+.navbar-animation-carrinho:focus-visible {
+  outline: 2px solid #e8d6ff;
+  outline-offset: 3px;
 }
 
 .navbar-animation-carrinho {
-  transition:
-    background-color 500ms ease,
-    border-radius 500ms ease;
-
+  transition: color 220ms ease;
   color: #f5f0fa;
 }
 
-.navbar-animation-carrinho:hover {
-  background-color: #7139a8;
-  border-radius: 20px;
+.navbar-animation-carrinho:hover,
+.navbar-animation-carrinho:focus-visible {
+  color: #fff;
+}
+
+.navbar-animation-carrinho i {
+  display: inline-block;
+  transition: transform 220ms ease, color 220ms ease;
+}
+
+.navbar-animation-carrinho:hover i,
+.navbar-animation-carrinho:focus-visible i {
+  color: #e8d6ff;
+  transform: translateY(-2px) scale(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar-animation,
+  .navbar-animation::after,
+  .navbar-animation-carrinho,
+  .navbar-animation-carrinho i {
+    transition: none;
+  }
 }
 
 section {
