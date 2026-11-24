@@ -1,11 +1,30 @@
 {
   "version": 4,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "GestaoDeCompras.Dominio/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/GestaoDeCompras.Dominio.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestaoDeCompras.Dominio.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "GestaoDeCompras.Dominio/1.0.0": {
+      "type": "project",
+      "path": "../../Dominio/GestaoDeCompras.Dominio/GestaoDeCompras.Dominio.csproj",
+      "msbuildProject": "../../Dominio/GestaoDeCompras.Dominio/GestaoDeCompras.Dominio.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "GestaoDeCompras.Dominio >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\kauan\\.nuget\\packages\\": {}
@@ -32,7 +51,11 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Documents\\CursoADP\\ProjetoFinal\\Site_De_Vendas_e_exposicao_AlmaeArte\\backend\\src\\Dominio\\GestaoDeCompras.Dominio\\GestaoDeCompras.Dominio.csproj": {
+              "projectPath": "D:\\Documents\\CursoADP\\ProjetoFinal\\Site_De_Vendas_e_exposicao_AlmaeArte\\backend\\src\\Dominio\\GestaoDeCompras.Dominio\\GestaoDeCompras.Dominio.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
