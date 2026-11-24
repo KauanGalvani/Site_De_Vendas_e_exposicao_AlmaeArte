@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "GestaoDeCompras.Aplicacao/1.0.0": {
+        "dependencies": {
+          "GestaoDeCompras.Dominio": "1.0.0"
+        },
+        "runtime": {
+          "GestaoDeCompras.Aplicacao.dll": {}
+        }
+      },
+      "GestaoDeCompras.Dominio/1.0.0": {
+        "runtime": {
+          "GestaoDeCompras.Dominio.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GestaoDeCompras.Aplicacao/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GestaoDeCompras.Dominio/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -6,7 +6,7 @@ Repositório com o front-end Angular e a API ASP.NET Core em projetos separados.
 
 ```text
 frontend/       Aplicação Angular
-backend/        API ASP.NET Core Web API (AlmaeArte.Api)
+backend/        API ASP.NET Core Web API (GestaoDeCompras.Api)
 docs/           Documentação do projeto
 ```
 

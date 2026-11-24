@@ -1,0 +1,12 @@
+D:\Documents\CursoADP\ProjetoFinal\Site_De_Vendas_e_exposicao_AlmaeArte\backend\src\Dominio\GestaoDeCompras.Dominio\bin\Debug\net10.0\GestaoDeCompras.Dominio.deps.json
+D:\Documents\CursoADP\ProjetoFinal\Site_De_Vendas_e_exposicao_AlmaeArte\backend\src\Dominio\GestaoDeCompras.Dominio\bin\Debug\net10.0\GestaoDeCompras.Dominio.dll
+D:\Documents\CursoADP\ProjetoFinal\Site_De_Vendas_e_exposicao_AlmaeArte\backend\src\Dominio\GestaoDeCompras.Dominio\bin\Debug\net10.0\GestaoDeCompras.Dominio.pdb
+D:\Documents\CursoADP\ProjetoFinal\Site_De_Vendas_e_exposicao_AlmaeArte\backend\src\Dominio\GestaoDeCompras.Dominio\obj\Debug\net10.0\GestaoDeCompras.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documents\CursoADP\ProjetoFinal\Site_De_Vendas_e_exposicao_AlmaeArte\backend\src\Dominio\GestaoDeCompras.Dominio\obj\Debug\net10.0\GestaoDeCompras.Dominio.AssemblyInfoInputs.cache
+D:\Documents\CursoADP\ProjetoFinal\Site_De_Vendas_e_exposicao_AlmaeArte\backend\src\Dominio\GestaoDeCompras.Dominio\obj\Debug\net10.0\GestaoDeCompras.Dominio.AssemblyInfo.cs
+D:\Documents\CursoADP\ProjetoFinal\Site_De_Vendas_e_exposicao_AlmaeArte\backend\src\Dominio\GestaoDeCompras.Dominio\obj\Debug\net10.0\GestaoDeCompras.Dominio.csproj.CoreCompileInputs.cache
+D:\Documents\CursoADP\ProjetoFinal\Site_De_Vendas_e_exposicao_AlmaeArte\backend\src\Dominio\GestaoDeCompras.Dominio\obj\Debug\net10.0\GestaoDeCompras.Dominio.sourcelink.json
+D:\Documents\CursoADP\ProjetoFinal\Site_De_Vendas_e_exposicao_AlmaeArte\backend\src\Dominio\GestaoDeCompras.Dominio\obj\Debug\net10.0\GestaoDeCompras.Dominio.dll
+D:\Documents\CursoADP\ProjetoFinal\Site_De_Vendas_e_exposicao_AlmaeArte\backend\src\Dominio\GestaoDeCompras.Dominio\obj\Debug\net10.0\refint\GestaoDeCompras.Dominio.dll
+D:\Documents\CursoADP\ProjetoFinal\Site_De_Vendas_e_exposicao_AlmaeArte\backend\src\Dominio\GestaoDeCompras.Dominio\obj\Debug\net10.0\GestaoDeCompras.Dominio.pdb
+D:\Documents\CursoADP\ProjetoFinal\Site_De_Vendas_e_exposicao_AlmaeArte\backend\src\Dominio\GestaoDeCompras.Dominio\obj\Debug\net10.0\ref\GestaoDeCompras.Dominio.dll
