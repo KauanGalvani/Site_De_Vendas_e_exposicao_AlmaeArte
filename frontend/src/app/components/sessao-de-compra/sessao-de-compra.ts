@@ -1,11 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Obra } from '../../models/obra';
 
-export interface ObraSelecionada {
-  titulo: string;
-  imagem: string;
-  categoria: string;
-  preco: number;
-}
+export type ObraSelecionada = Obra;
 
 @Component({
   selector: 'app-sessao-de-compra',
