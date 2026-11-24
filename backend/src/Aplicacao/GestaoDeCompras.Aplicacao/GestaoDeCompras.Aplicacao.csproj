@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\Dominio\GestaoDeCompras.Dominio\GestaoDeCompras.Dominio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Obras\" />
+  </ItemGroup>
+
 </Project>
