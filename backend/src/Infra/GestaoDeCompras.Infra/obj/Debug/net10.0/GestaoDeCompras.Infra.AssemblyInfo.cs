@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestaoDeCompras.Infra")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d3b637a6beb9412db7ab4dae081cd6255c65dff4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a41c77a55049acdc22bca3de77118a7fa8d424b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestaoDeCompras.Infra")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestaoDeCompras.Infra")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
