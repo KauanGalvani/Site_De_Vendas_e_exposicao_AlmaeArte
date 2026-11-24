@@ -1,5 +1,16 @@
 <Solution>
-  <Folder Name="/backend/">
-    <Project Path="backend/GestaoDeCompras.WebApi/GestaoDeCompras.WebApi.csproj" />
+  <Folder Name="/backend/" />
+  <Folder Name="/backend/src/" />
+  <Folder Name="/backend/src/Api/">
+    <Project Path="backend/src/Api/GestaoDeCompras.WebApi/GestaoDeCompras.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/backend/src/Aplicacao/">
+    <Project Path="backend/src/Aplicacao/GestaoDeCompras.Aplicacao/GestaoDeCompras.Aplicacao.csproj" />
+  </Folder>
+  <Folder Name="/backend/src/Dominio/">
+    <Project Path="backend/src/Dominio/GestaoDeCompras.Dominio/GestaoDeCompras.Dominio.csproj" />
+  </Folder>
+  <Folder Name="/backend/src/Infra/">
+    <Project Path="backend/src/Infra/GestaoDeCompras.Infra/GestaoDeCompras.Infra.csproj" />
   </Folder>
 </Solution>

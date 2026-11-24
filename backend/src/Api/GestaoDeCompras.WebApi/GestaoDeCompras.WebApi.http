@@ -1,4 +1,4 @@
-@GestaoDeCompras.WebApi_HostAddress = http://localhost:5091
+@GestaoDeCompras.WebApi_HostAddress = http://localhost:5278
 
 GET {{GestaoDeCompras.WebApi_HostAddress}}/weatherforecast/
 Accept: application/json
