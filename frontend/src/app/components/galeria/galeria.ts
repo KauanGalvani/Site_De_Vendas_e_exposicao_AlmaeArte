@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, inject, signal } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { Obra } from '../../models/obra';
 import { ObrasService } from '../../services/obras.service';
@@ -13,12 +13,12 @@ export class Galeria implements OnInit {
   private readonly obrasService = inject(ObrasService);
   @Input() obrasNoCarrinho: ObraSelecionada[] = [];
   @Output() adicionarAoCarrinho = new EventEmitter<ObraSelecionada>();
-  obrasGaleria: Obra[] = [];
+  readonly obrasGaleria = signal<Obra[]>([]);
 
   ngOnInit(): void {
     this.obrasService.listar().subscribe({
       next: (obras) => {
-        this.obrasGaleria = obras;
+        this.obrasGaleria.set(obras);
       },
       error: (erro) => {
         console.error('Erro ao carregar as obras:', erro);
