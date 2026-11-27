@@ -63,31 +63,32 @@
           ><strong>{{ obras.length }} {{ obras.length === 1 ? 'item' : 'itens' }}</strong>
         </div>
         <div class="resumo-total">
-          <span>Total demonstrativo</span><strong>{{ formatarMoeda(total) }}</strong>
+          <span>Total</span><strong>{{ formatarMoeda(total) }}</strong>
         </div>
 
         <div class="aviso-simulacao">
           <i class="bi bi-info-circle-fill" aria-hidden="true"></i>
           <p>
-            <strong>Compra demonstrativa</strong><br />Nenhum pagamento será realizado. A
-            disponibilidade precisa ser confirmada com a artista.
+            <strong>Compra demonstrativa</strong><br />A confirmação é simulada pela API. Nenhum
+            pagamento será realizado.
           </p>
         </div>
 
         <button
           class="btn btn-primary btn-lg w-100"
           type="button"
-          [disabled]="obras.length === 0"
-          (click)="mostrarAviso = true"
+          [disabled]="obras.length === 0 || registrandoCompra()"
+          (click)="registrarCompra()"
         >
-          Continuar com {{ obras.length }} {{ obras.length === 1 ? 'obra' : 'obras' }}
+          {{
+            registrandoCompra()
+              ? 'Enviando compra...'
+              : 'Continuar com ' + obras.length + ' ' + (obras.length === 1 ? 'obra' : 'obras')
+          }}
           <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
         </button>
-        @if (mostrarAviso) {
-          <p class="retorno-compra" role="status">
-            A confirmação pela API será disponibilizada em breve. Entre em contato com a artista
-            para consultar as obras.
-          </p>
+        @if (erroCompra(); as mensagemErro) {
+          <p class="retorno-compra" role="alert">{{ mensagemErro }}</p>
         }
         <p class="compra-contato mb-0">
           Ficou com alguma dúvida?

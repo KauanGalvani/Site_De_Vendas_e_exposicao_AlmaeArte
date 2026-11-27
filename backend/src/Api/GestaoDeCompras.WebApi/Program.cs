@@ -1,5 +1,8 @@
+using GestaoDeCompras.Aplicacao.Compras;
 using GestaoDeCompras.Aplicacao.Obras;
+using GestaoDeCompras.Dominio.Compras;
 using GestaoDeCompras.Dominio.Obras;
+using GestaoDeCompras.Infra.Compras;
 using GestaoDeCompras.Infra.Obras;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +23,9 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddScoped<IRepositorioObras, RepositorioObrasEmMemoria>();
 builder.Services.AddScoped<ListarObras>();
+builder.Services.AddScoped<IRepositorioCompra, RepositorioCompraEmMemoria>();
+builder.Services.AddScoped<RegistrarCompra>();
+builder.Services.AddScoped<ConfirmarPagamentoCompra>();
 
 var app = builder.Build();
 
@@ -57,7 +63,32 @@ app.MapGet("/api/obras", async (ListarObras listarObras) =>
   return Results.Ok(obras);
 });
 
+app.MapPost("/api/compras", async (
+    RegistrarCompraRequest request,
+    RegistrarCompra registrarCompra) =>
+{
+  var compra = await registrarCompra.ExecutarAsync(request.ObraIds);
+
+  if (compra is null)
+    return Results.BadRequest(new { mensagem = "A lista está vazia ou contém uma obra inválida." });
+
+  return Results.Created($"/api/compras/{compra.Id}", compra);
+});
+
+app.MapPost("/api/compras/{id:guid}/confirmar-pagamento", async (
+    Guid id,
+    ConfirmarPagamentoCompra confirmarPagamento) =>
+{
+  var compra = await confirmarPagamento.ExecutarAsync(id);
+
+  return compra is null
+    ? Results.NotFound(new { mensagem = "Compra não encontrada." })
+    : Results.Ok(compra);
+});
+
 app.Run();
+
+record RegistrarCompraRequest(List<int> ObraIds);
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
