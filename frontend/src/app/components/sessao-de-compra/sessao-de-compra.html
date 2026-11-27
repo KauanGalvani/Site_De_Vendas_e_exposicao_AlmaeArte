@@ -77,17 +77,24 @@
         <button
           class="btn btn-primary btn-lg w-100"
           type="button"
-          [disabled]="obras.length === 0"
-          (click)="mostrarAviso = true"
+          [disabled]="obras.length === 0 || registrandoCompra()"
+          (click)="registrarCompra()"
         >
-          Continuar com {{ obras.length }} {{ obras.length === 1 ? 'obra' : 'obras' }}
+          {{
+            registrandoCompra()
+              ? 'Enviando compra...'
+              : 'Continuar com ' + obras.length + ' ' + (obras.length === 1 ? 'obra' : 'obras')
+          }}
           <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
         </button>
-        @if (mostrarAviso) {
+        @if (compraRegistrada(); as compra) {
           <p class="retorno-compra" role="status">
-            A confirmação pela API será disponibilizada em breve. Entre em contato com a artista
-            para consultar as obras.
+            Compra registrada pela API. Total calculado: {{ formatarMoeda(compra.total) }}.
+            Status: {{ compra.status }}. Código: {{ compra.id }}.
           </p>
+        }
+        @if (erroCompra(); as mensagemErro) {
+          <p class="retorno-compra" role="alert">{{ mensagemErro }}</p>
         }
         <p class="compra-contato mb-0">
           Ficou com alguma dúvida?
