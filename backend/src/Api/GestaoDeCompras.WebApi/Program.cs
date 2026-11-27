@@ -62,7 +62,21 @@ app.MapGet("/api/obras", async (ListarObras listarObras) =>
   return Results.Ok(obras);
 });
 
+app.MapPost("/api/compras", async (
+    RegistrarCompraRequest request,
+    RegistrarCompra registrarCompra) =>
+{
+  var compra = await registrarCompra.ExecutarAsync(request.ObraIds);
+
+  if (compra is null)
+    return Results.BadRequest(new { mensagem = "A lista está vazia ou contém uma obra inválida." });
+
+  return Results.Created($"/api/compras/{compra.Id}", compra);
+});
+
 app.Run();
+
+record RegistrarCompraRequest(List<int> ObraIds);
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
