@@ -1,0 +1,16 @@
+<app-navbar [quantidadeNoCarrinho]="obrasNoCarrinho.length"></app-navbar>
+
+<app-inicio></app-inicio>
+
+<app-sobre></app-sobre>
+
+<app-galeria
+  [obrasNoCarrinho]="obrasNoCarrinho"
+  (adicionarAoCarrinho)="adicionarAoCarrinho($event)"
+></app-galeria>
+
+<app-sessao-de-compra
+  [obras]="obrasNoCarrinho"
+  (removerObra)="removerDoCarrinho($event)"
+  (compraCriada)="irParaPagamento($event)"
+></app-sessao-de-compra>

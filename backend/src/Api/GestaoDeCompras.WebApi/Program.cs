@@ -25,6 +25,7 @@ builder.Services.AddScoped<IRepositorioObras, RepositorioObrasEmMemoria>();
 builder.Services.AddScoped<ListarObras>();
 builder.Services.AddScoped<IRepositorioCompra, RepositorioCompraEmMemoria>();
 builder.Services.AddScoped<RegistrarCompra>();
+builder.Services.AddScoped<ConfirmarPagamentoCompra>();
 
 var app = builder.Build();
 
@@ -72,6 +73,17 @@ app.MapPost("/api/compras", async (
     return Results.BadRequest(new { mensagem = "A lista está vazia ou contém uma obra inválida." });
 
   return Results.Created($"/api/compras/{compra.Id}", compra);
+});
+
+app.MapPost("/api/compras/{id:guid}/confirmar-pagamento", async (
+    Guid id,
+    ConfirmarPagamentoCompra confirmarPagamento) =>
+{
+  var compra = await confirmarPagamento.ExecutarAsync(id);
+
+  return compra is null
+    ? Results.NotFound(new { mensagem = "Compra não encontrada." })
+    : Results.Ok(compra);
 });
 
 app.Run();

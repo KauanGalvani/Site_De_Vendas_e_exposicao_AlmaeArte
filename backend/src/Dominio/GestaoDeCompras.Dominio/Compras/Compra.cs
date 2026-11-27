@@ -16,6 +16,11 @@ public class Compra
     Id = Guid.NewGuid();
     CriadoEm = DateTimeOffset.UtcNow;
     Obras = obras;
-    Status = "Aguardando confirmação";
+    Status = "Aguardando pagamento";
+  }
+
+  public void ConfirmarPagamento()
+  {
+    Status = "Pagamento confirmado";
   }
 }

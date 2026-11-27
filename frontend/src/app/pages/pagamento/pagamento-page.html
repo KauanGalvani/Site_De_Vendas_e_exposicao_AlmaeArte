@@ -1,0 +1,66 @@
+<main class="conteudo-secao sessao-compra">
+  <div class="container">
+    @if (compra(); as pedido) {
+      <div class="compra-cabecalho text-center mx-auto">
+        <p class="secao-sobretitulo mb-2">Última etapa</p>
+        <h1 class="display-5 fw-bold mb-3">Confirmar pagamento</h1>
+        <p class="lead mb-0">Revise seu pedido antes de confirmar.</p>
+      </div>
+
+      <section class="compra-painel row g-0 mx-auto mt-5" aria-labelledby="pedido-titulo">
+        <div class="col-lg-7 compra-escolha">
+          <h2 id="pedido-titulo">Resumo do pedido</h2>
+          @for (obra of pedido.obras; track obra.id) {
+            <article class="obra-selecionada">
+              <img [src]="obra.imagem" [alt]="obra.titulo" />
+              <div>
+                <h3>{{ obra.titulo }}</h3>
+                <p>{{ obra.categoria }}</p>
+                <strong>{{ formatarMoeda(obra.preco) }}</strong>
+              </div>
+            </article>
+          }
+        </div>
+
+        <aside class="col-lg-5 compra-resumo">
+          <h2>Pagamento</h2>
+          <div class="resumo-total">
+            <span>Total do pedido</span>
+            <strong>{{ formatarMoeda(pedido.total) }}</strong>
+          </div>
+          <p><strong>Status:</strong> {{ pedido.status }}</p>
+          <p class="aviso-simulacao">
+            Esta etapa é uma simulação para o projeto. Nenhum pagamento real será realizado.
+          </p>
+
+          @if (pedido.status === 'Pagamento confirmado') {
+            <p class="retorno-compra" role="status">Pagamento confirmado na simulação.</p>
+          } @else {
+            <button
+              class="btn btn-primary btn-lg w-100"
+              type="button"
+              [disabled]="processando()"
+              (click)="confirmarPagamento()"
+            >
+              {{ processando() ? 'Confirmando...' : 'Confirmar pagamento (simulação)' }}
+            </button>
+          }
+
+          @if (erro(); as mensagemErro) {
+            <p class="retorno-compra" role="alert">{{ mensagemErro }}</p>
+          }
+
+          <button class="btn btn-outline-primary w-100 mt-3" type="button" (click)="voltarParaLoja()">
+            Voltar para a loja
+          </button>
+        </aside>
+      </section>
+    } @else {
+      <div class="compra-vazia text-center">
+        <h1>Nenhum pedido para pagamento</h1>
+        <p>Adicione uma obra ao carrinho para iniciar uma compra demonstrativa.</p>
+        <button class="btn btn-primary" type="button" (click)="voltarParaLoja()">Voltar para a loja</button>
+      </div>
+    }
+  </div>
+</main>

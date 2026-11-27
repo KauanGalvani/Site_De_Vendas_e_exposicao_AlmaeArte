@@ -19,4 +19,11 @@ export class ComprasService {
   registrar(obraIds: number[]): Observable<CompraRegistrada> {
     return this.http.post<CompraRegistrada>(this.apiUrl, { obraIds });
   }
+
+  confirmarPagamento(compraId: string): Observable<CompraRegistrada> {
+    return this.http.post<CompraRegistrada>(
+      `${this.apiUrl}/${compraId}/confirmar-pagamento`,
+      {},
+    );
+  }
 }

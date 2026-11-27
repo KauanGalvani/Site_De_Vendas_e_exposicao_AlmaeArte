@@ -13,8 +13,8 @@ export class SessaoDeCompra {
 
   @Input() obras: ObraSelecionada[] = [];
   @Output() removerObra = new EventEmitter<ObraSelecionada>();
+  @Output() compraCriada = new EventEmitter<CompraRegistrada>();
   readonly registrandoCompra = signal(false);
-  readonly compraRegistrada = signal<CompraRegistrada | null>(null);
   readonly erroCompra = signal<string | null>(null);
 
   get total(): number {
@@ -31,14 +31,13 @@ export class SessaoDeCompra {
     }
 
     this.registrandoCompra.set(true);
-    this.compraRegistrada.set(null);
     this.erroCompra.set(null);
 
     const obraIds = this.obras.map((obra) => obra.id);
 
     this.comprasService.registrar(obraIds).subscribe({
       next: (compra) => {
-        this.compraRegistrada.set(compra);
+        this.compraCriada.emit(compra);
         this.registrandoCompra.set(false);
       },
       error: (erro) => {
