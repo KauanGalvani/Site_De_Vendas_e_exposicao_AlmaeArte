@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestaoDeCompras.Dominio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1c03d66965cb28191c8fe24d4de67ef8db56a41")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82f2a72974305d14cf2af777d9a399c14a3ca082")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestaoDeCompras.Dominio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestaoDeCompras.Dominio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
