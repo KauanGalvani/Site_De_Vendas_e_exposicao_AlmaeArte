@@ -1,5 +1,8 @@
+using GestaoDeCompras.Aplicacao.Compras;
 using GestaoDeCompras.Aplicacao.Obras;
+using GestaoDeCompras.Dominio.Compras;
 using GestaoDeCompras.Dominio.Obras;
+using GestaoDeCompras.Infra.Compras;
 using GestaoDeCompras.Infra.Obras;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +23,8 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddScoped<IRepositorioObras, RepositorioObrasEmMemoria>();
 builder.Services.AddScoped<ListarObras>();
+builder.Services.AddScoped<IRepositorioCompra, RepositorioCompraEmMemoria>();
+builder.Services.AddScoped<RegistrarCompra>();
 
 var app = builder.Build();
 
