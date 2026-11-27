@@ -7,8 +7,8 @@ public class Compra
 {
   public Guid Id { get; private set; }
   public DateTimeOffset CriadoEm { get; private set; }
-  public IReadOnlyList<Obra>? Obras { get; private set; }
-  public decimal Total => Obras!.Sum(obra => obra.Preco);
+  public IReadOnlyList<Obra> Obras { get; private set; }
+  public decimal Total => Obras.Sum(obra => obra.Preco);
   public string Status { get; private set; } = string.Empty;
 
   public Compra(IReadOnlyList<Obra> obras)
